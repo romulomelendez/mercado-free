@@ -4,6 +4,7 @@ import { LuMapPin } from "react-icons/lu"
 import { MdKeyboardArrowRight } from "react-icons/md"
 
 import { Logo, SearchContainer } from "../"
+import { Link } from "react-router-dom"
 
 export const Header = () => {
     return (
@@ -19,7 +20,9 @@ export const Header = () => {
                     <LuMapPin size={15} className="text-dark-yellow" />
                     <span className="text-dark-yellow text-xs">Send to P. Sherman, 42 Wallaby Way, Sydney</span>
                 </div>
-                <MdKeyboardArrowRight size={15} className="text-dark-yellow" />
+                <Link to="/purchases">
+                    <MdKeyboardArrowRight size={15} className="text-dark-yellow" />
+                </Link>
             </section>
         </div>
     )
