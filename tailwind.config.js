@@ -10,6 +10,9 @@ export default {
         "light-yellow": "#FFF159",
         "dark-yellow": "#736c28",
         "light-gray": "#ebebeb"
+      },
+      screens: {
+        "xm": "405px"
       }
     },
   },
