@@ -5,12 +5,16 @@ import {
 } from "react-router-dom"
 
 import { Home, CompletePurchase } from "./pages"
+import { Header } from "./components"
 
 export const App: React.FC = () => (
   <Router basename="/app">
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/purchases" element={<CompletePurchase />} />
-    </Routes>
+    <div className="flex flex-col">
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/purchases" element={<CompletePurchase />} />
+      </Routes>
+    </div>
   </Router>
 )

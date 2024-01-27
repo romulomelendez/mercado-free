@@ -8,21 +8,23 @@ import { Link } from "react-router-dom"
 
 export const Header = () => {
     return (
-        <div className="flex flex-col bg-light-yellow">
-            <section className="flex justify-center items-center p-2 gap-3">
+        <div className="flex flex-col w-full bg-light-yellow">
+            <section className="flex justify-center items-center p-2 gap-2">
                 <Logo />
                 <SearchContainer />
-                <CiMenuBurger size={25} className="cursor-pointer" />
-                <IoCartOutline size={25} className="cursor-pointer" />
+                <Link to="/">
+                    <CiMenuBurger size={25} className="cursor-pointer" />
+                </Link>
+                <Link to="/purchases">
+                    <IoCartOutline size={25} className="cursor-pointer" />
+                </Link>
             </section>
             <section className="flex w-full justify-between items-center p-2 gap-3">
-                <div className="flex gap-2">
+                <div className="flex gap-2 w-full">
                     <LuMapPin size={15} className="text-dark-yellow" />
                     <span className="text-dark-yellow text-xs">Send to P. Sherman, 42 Wallaby Way, Sydney</span>
                 </div>
-                <Link to="/purchases">
-                    <MdKeyboardArrowRight size={15} className="text-dark-yellow" />
-                </Link>
+                <MdKeyboardArrowRight size={15} className="text-dark-yellow" />
             </section>
         </div>
     )
