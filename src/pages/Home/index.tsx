@@ -2,27 +2,22 @@
 
 import { useState, useEffect, Suspense } from "react"
 
+import { useProduct } from "../../hooks"
+
 import { CiShoppingCart } from "react-icons/ci"
 
-type ProductProps = {
-  id: number | string,
-  name: string,
-  price: number | string,
-  img: string
-}
+import { ProductProps } from "../../@types"
 
 export const Home: React.FC = () => {
 
   const [ products, setProducts ] = useState<ProductProps[]>([])
-  const [ , setCart ] = useState<ProductProps[]>([])
+  const { addToCart } = useProduct()
   
   const getProducts = async (): Promise<void> => {
 
     const products = await (await fetch(import.meta.env.VITE_APP_BASE_API_URL + "/products")).json()
     setProducts(products)
   }
-  
-  const handleCart = (product: ProductProps): void => setCart(allOtherProducts => [...allOtherProducts, product])
 
   useEffect(() => {
     return () => {
@@ -35,14 +30,14 @@ export const Home: React.FC = () => {
       <Suspense fallback={<p>Loading Products...</p>}>
         {
           products && products.map(product => (
-            <div key={ product.id } className="flex flex-col w-48 h-full p-5 gap-1 justify-between items-start bg-white hover:bg-slate-300">
+            <div key={ product.id } className="flex flex-col w-48 h-full p-5 gap-1 justify-between items-start bg-white hover:bg-slate-200">
               <img src={ product.img } alt="product image" height={200} width={150} />
               <span className="text-bold text-2xl">{ product.name }</span>
               <span className="text-bold text-xl mt-5">R$ { product.price }</span>
               <button
                 type="button"
                 className="flex w-full h-max bg-blue-700 hover:bg-blue-900 p-1 gap-2 rounded-md justify-center items-center mt-5"
-                onClick={() => handleCart(product)}
+                onClick={() => addToCart(product)}
                 >
                   <CiShoppingCart size={28} color="white"/>
                   <span className="text-white text-semibold text-lg">

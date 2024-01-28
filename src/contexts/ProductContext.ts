@@ -1,17 +1,17 @@
 import { createContext } from "react"
 
-type ProductProps = {
-  id: number | string
-  name: string
-  price: number | string
-  img: string
+import { ProductProps } from "../@types"
+
+type ProductContextProps = {
+  cart: ProductProps[],
+  addToCart: (product: ProductProps) => void,
+  // removeFromCart: (product: ProductProps) => void,
 }
 
 const initialValues = {
-  id: 0,
-  name: "",
-  price: 0,
-  img: "",
+  cart: [],
+  addToCart: () => {},
+  // removeFromCart: () => {},
 }
 
-export const ProductContext = createContext<ProductProps>(initialValues)
+export const ProductContext = createContext<ProductContextProps>(initialValues)
