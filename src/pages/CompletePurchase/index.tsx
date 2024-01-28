@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom"
 
+import { Card } from "../../components"
+
 import { useProduct } from "../../hooks"
 
+import { FaRegTrashAlt } from "react-icons/fa"
+import { IoAddCircle } from "react-icons/io5"
 import { GiShoppingBag } from "react-icons/gi"
 
 export const CompletePurchase: React.FC = () => {
@@ -9,14 +13,20 @@ export const CompletePurchase: React.FC = () => {
   const { cart } = useProduct()
 
   return (
-    <div className="flex justify-center items-start w-screen h-full p-2 bg-main-gray">
+    <div className="flex flex-col justify-start items-center w-screen h-full p-2 gap-2 bg-main-gray overflow-scroll">
       {
         cart.length != 0 ?
           cart.map(cartItem => (
-            <div key={ cartItem.id } className="flex flex-col gap-2">
-              <img src={ cartItem.img } alt="product image" />
-              <span>{ cartItem.name }</span>
-              <span>{ cartItem.price }</span>
+            <div className="bg-white rounded-sm" key={ cartItem.id }>
+              <Card product={cartItem} />
+              <section className="flex justify-around p-2">
+                <button type="button" className="flex justify-center bg-blue-400 w-1/2 p-2">
+                  <IoAddCircle size={20} color="white" />
+                </button>
+                <button type="button" className="flex justify-center bg-red-600 w-1/2 p-2">
+                  <FaRegTrashAlt size={20} color="white" />
+                </button>
+              </section>
             </div>
           ))
         :
