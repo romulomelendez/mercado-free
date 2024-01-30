@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom"
 
-import { Card } from "../../components"
+import { Card, Counter } from "../../components"
+
+import { GiShoppingBag } from "react-icons/gi"
 
 import { useProduct } from "../../hooks"
 
-import { FaRegTrashAlt } from "react-icons/fa"
-import { IoAddCircle } from "react-icons/io5"
-import { GiShoppingBag } from "react-icons/gi"
 
 export const CompletePurchase: React.FC = () => {
 
@@ -17,21 +16,17 @@ export const CompletePurchase: React.FC = () => {
       {
         cart.length != 0 ?
           cart.map(cartItem => (
-            <div className="bg-white rounded-sm" key={ cartItem.id }>
-              <Card product={cartItem} />
-              <section className="flex justify-around p-2">
-                <button type="button" className="flex justify-center bg-blue-400 w-1/2 p-2">
-                  <IoAddCircle size={20} color="white" />
-                </button>
-                <button type="button" className="flex justify-center bg-red-600 w-1/2 p-2">
-                  <FaRegTrashAlt size={20} color="white" />
-                </button>
-              </section>
+            <div
+              className="bg-white w-full flex flex-col justify-center items-center rounded-sm"
+              key={cartItem.product.id}
+            >
+              <Card product={cartItem.product} />
+              <Counter price={cartItem.product.price} />
             </div>
           ))
         :
           <div className="flex flex-col items-center mt-3 p-2 gap-4 w-full">
-            <GiShoppingBag color="#cecece" size={150} />
+            <GiShoppingBag size={150} color="#cecece" />
             <span className="text-black text-xl">
               Build your shopping cart
             </span>

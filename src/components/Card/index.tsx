@@ -14,7 +14,7 @@ export const Card: React.FC<CardProps> = ({ product: { id, name, price, img } }:
             { name }
         </span>
         <span className="text-bold text-xl mt-5">
-            R$ { price }
+            US$ { price }
         </span>
     </div>
 )

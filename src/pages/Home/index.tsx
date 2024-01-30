@@ -36,7 +36,7 @@ export const Home: React.FC = () => {
                 className="flex justify-center items-center w-44 h-8 bg-blue-700 hover:bg-blue-900 p-1 gap-2 rounded-md mt-3"
                 onClick={() => addToCart(product)}
               >
-                  <CiShoppingCart size={28} color="white"/>
+                  <CiShoppingCart size={28} color="white" />
                   <span className="text-white text-semibold text-lg">
                       Add to cart
                   </span>
