@@ -1,16 +1,13 @@
-import { useState, ReactNode } from "react"
+import { useState } from "react"
 
 import { ProductContext } from "../contexts"
 
-import { ProductProps, CartProps } from "../@types"
-
-type ProductProviderProps = {
-    children: ReactNode
-}
+import { ProductProps, CartProps, ProductProviderProps,  } from "../@types"
 
 export const ProductProvider = ({ children }: ProductProviderProps) => {
 
-    const [ cart, setCart ] = useState<CartProps[]>([])
+    const [cart, setCart] = useState<CartProps[]>([])
+    const [totalPrice, setTotalPrice] = useState<number>(0)
 
     const addToCart = (product: ProductProps): void => setCart(allOtherProducts => [...allOtherProducts, {
         product: product,
@@ -25,7 +22,13 @@ export const ProductProvider = ({ children }: ProductProviderProps) => {
     }
 
     return (
-        <ProductContext.Provider value={{ cart, addToCart, removeFromCart }}>
+        <ProductContext.Provider value={{
+            cart,
+            addToCart,
+            removeFromCart,
+            totalPrice,
+            setTotalPrice
+        }}>
             { children }
         </ProductContext.Provider>
     )

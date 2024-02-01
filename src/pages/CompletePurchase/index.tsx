@@ -1,27 +1,27 @@
 import { Link } from "react-router-dom"
 
-import { Card, Counter } from "../../components"
-
 import { GiShoppingBag } from "react-icons/gi"
 
 import { useProduct } from "../../hooks"
 
+import { Card, Counter, Total } from "../../components"
 
 export const CompletePurchase: React.FC = () => {
 
-  const { cart } = useProduct()
+  const { cart, totalPrice } = useProduct()
 
   return (
     <div className="flex flex-col justify-start items-center w-screen h-full p-2 gap-2 bg-main-gray overflow-scroll">
       {
-        cart.length != 0 ?
+        cart.length !== 0 ?
           cart.map(cartItem => (
             <div
-              className="bg-white w-full flex flex-col justify-center items-center rounded-sm"
+              className="flex flex-col justify-center items-center w-full bg-white rounded-sm"
               key={cartItem.product.id}
             >
               <Card product={cartItem.product} />
-              <Counter price={cartItem.product.price} />
+              <Counter cartProduct={cartItem}
+              />
             </div>
           ))
         :
@@ -40,7 +40,7 @@ export const CompletePurchase: React.FC = () => {
             </Link>
           </div>
       }
+      <Total total={totalPrice} />
     </div>
   )
-  
 }

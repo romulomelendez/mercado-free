@@ -1,85 +1,77 @@
 {
   "products": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Samsung Galaxy S10",
       "price": 1199,
       "createdAt": "2019-10-10",
-      "img": "https://a-static.mlcdn.com.br/450x450/smartphone-samsung-galaxy-s10-dual-chip-branco-tela-6-1-4g-wifi-nfc-android-9-0-camera-12-16-12mp-128gb/efacil/3303021/f3c59735696f7523ecd0ae4aa1143f2a.jpg"
+      "img": "https://a-static.mlcdn.com.br/450x450/smartphone-samsung-galaxy-s10-dual-chip-branco-tela-6-1-4g-wifi-nfc-android-9--camera-12-16-12mp-128gb/efacil/3303021/f3c59735696f7523ecd0ae4aa1143f2a.jpg"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Samsung Galaxy S20 fe",
       "price": 1050,
       "createdAt": "2021-12-31",
       "img": "https://a-static.mlcdn.com.br/450x450/smartphone-samsung-galaxy-s20-fe-5g-128gb-azul/magazineluiza/234880200/528a2758b5ee50eb6fe9e9eb5dc1bf35.jpg"
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Samsung Galaxy S21",
       "price": 1399,
       "createdAt": "2022-5-5",
       "img": "https://api.store.vivo.com.br/medias/515Wx515H-TGSA397R-10-.jpg?context=bWFzdGVyfGF6dXJlaW1hZ2VzfDEwMjU5NHxpbWFnZS9qcGVnfGg1OS9oZDYvODk4ODQyNDY2NzE2Ni81MTVXeDUxNUhfVEdTQTM5N1JfICgxMCkuanBnfGE3NTJlOTdiMzFmMWE1YmJmNDQ0N2U3ZWI4NTMxMzE0MTUxYmM4NWIyOTIwYmNkOWJmMjM0ZjNmYzc5Njk2NjM"
-    }
-    ,
+    },
     {
-      "id": "4",
+      "id": 4,
       "name": "Samsung Galaxy S21",
       "price": 1799,
       "createdAt": "2022-5-5",
       "img": "https://api.store.vivo.com.br/medias/515Wx515H-TGSA397R-10-.jpg?context=bWFzdGVyfGF6dXJlaW1hZ2VzfDEwMjU5NHxpbWFnZS9qcGVnfGg1OS9oZDYvODk4ODQyNDY2NzE2Ni81MTVXeDUxNUhfVEdTQTM5N1JfICgxMCkuanBnfGE3NTJlOTdiMzFmMWE1YmJmNDQ0N2U3ZWI4NTMxMzE0MTUxYmM4NWIyOTIwYmNkOWJmMjM0ZjNmYzc5Njk2NjM"
-    }
-    ,
+    },
     {
-      "id": "5",
+      "id": 5,
       "name": "Samsung Galaxy S21",
       "price": 3499,
       "createdAt": "2022-5-5",
       "img": "https://api.store.vivo.com.br/medias/515Wx515H-TGSA397R-10-.jpg?context=bWFzdGVyfGF6dXJlaW1hZ2VzfDEwMjU5NHxpbWFnZS9qcGVnfGg1OS9oZDYvODk4ODQyNDY2NzE2Ni81MTVXeDUxNUhfVEdTQTM5N1JfICgxMCkuanBnfGE3NTJlOTdiMzFmMWE1YmJmNDQ0N2U3ZWI4NTMxMzE0MTUxYmM4NWIyOTIwYmNkOWJmMjM0ZjNmYzc5Njk2NjM"
-    }
-    ,
+    },
     {
-      "id": "6",
+      "id": 6,
       "name": "Samsung Galaxy S21",
       "price": 10000,
       "createdAt": "2022-5-5",
       "img": "https://api.store.vivo.com.br/medias/515Wx515H-TGSA397R-10-.jpg?context=bWFzdGVyfGF6dXJlaW1hZ2VzfDEwMjU5NHxpbWFnZS9qcGVnfGg1OS9oZDYvODk4ODQyNDY2NzE2Ni81MTVXeDUxNUhfVEdTQTM5N1JfICgxMCkuanBnfGE3NTJlOTdiMzFmMWE1YmJmNDQ0N2U3ZWI4NTMxMzE0MTUxYmM4NWIyOTIwYmNkOWJmMjM0ZjNmYzc5Njk2NjM"
-    }
-    ,
+    },
     {
-      "id": "7",
+      "id": 7,
       "name": "Samsung Galaxy S21",
       "price": 999,
       "createdAt": "2022-5-5",
       "img": "https://api.store.vivo.com.br/medias/515Wx515H-TGSA397R-10-.jpg?context=bWFzdGVyfGF6dXJlaW1hZ2VzfDEwMjU5NHxpbWFnZS9qcGVnfGg1OS9oZDYvODk4ODQyNDY2NzE2Ni81MTVXeDUxNUhfVEdTQTM5N1JfICgxMCkuanBnfGE3NTJlOTdiMzFmMWE1YmJmNDQ0N2U3ZWI4NTMxMzE0MTUxYmM4NWIyOTIwYmNkOWJmMjM0ZjNmYzc5Njk2NjM"
-    }
-    ,
+    },
     {
-      "id": "8",
+      "id": 8,
       "name": "Samsung Galaxy S21",
       "price": 2499,
       "createdAt": "2022-5-5",
       "img": "https://api.store.vivo.com.br/medias/515Wx515H-TGSA397R-10-.jpg?context=bWFzdGVyfGF6dXJlaW1hZ2VzfDEwMjU5NHxpbWFnZS9qcGVnfGg1OS9oZDYvODk4ODQyNDY2NzE2Ni81MTVXeDUxNUhfVEdTQTM5N1JfICgxMCkuanBnfGE3NTJlOTdiMzFmMWE1YmJmNDQ0N2U3ZWI4NTMxMzE0MTUxYmM4NWIyOTIwYmNkOWJmMjM0ZjNmYzc5Njk2NjM"
-    }
-    ,
+    },
     {
-      "id": "9",
+      "id": 9,
       "name": "Samsung Galaxy S21",
       "price": 1999,
       "createdAt": "2022-5-5",
       "img": "https://api.store.vivo.com.br/medias/515Wx515H-TGSA397R-10-.jpg?context=bWFzdGVyfGF6dXJlaW1hZ2VzfDEwMjU5NHxpbWFnZS9qcGVnfGg1OS9oZDYvODk4ODQyNDY2NzE2Ni81MTVXeDUxNUhfVEdTQTM5N1JfICgxMCkuanBnfGE3NTJlOTdiMzFmMWE1YmJmNDQ0N2U3ZWI4NTMxMzE0MTUxYmM4NWIyOTIwYmNkOWJmMjM0ZjNmYzc5Njk2NjM"
-    }
-    ,
+    },
     {
-      "id": "10",
+      "id": 10,
       "name": "Samsung Galaxy S21",
       "price": 3699,
       "createdAt": "2022-5-5",
       "img": "https://api.store.vivo.com.br/medias/515Wx515H-TGSA397R-10-.jpg?context=bWFzdGVyfGF6dXJlaW1hZ2VzfDEwMjU5NHxpbWFnZS9qcGVnfGg1OS9oZDYvODk4ODQyNDY2NzE2Ni81MTVXeDUxNUhfVEdTQTM5N1JfICgxMCkuanBnfGE3NTJlOTdiMzFmMWE1YmJmNDQ0N2U3ZWI4NTMxMzE0MTUxYmM4NWIyOTIwYmNkOWJmMjM0ZjNmYzc5Njk2NjM"
-    }
-    ,
+    },
     {
-      "id": "11",
+      "id": 11,
       "name": "Samsung Galaxy M54 5G",
       "price": 2500,
       "createdAt": "2022-5-5",
