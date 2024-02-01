@@ -1,5 +1,5 @@
-import { FaRegTrashAlt } from "react-icons/fa"
-import { IoAddCircle } from "react-icons/io5"
+import { FaMinus } from "react-icons/fa"
+import { FaPlus } from "react-icons/fa6"
 
 import { CartProps } from "../../@types"
 
@@ -31,24 +31,24 @@ export const Counter: React.FC<CounterProps> = ({ cartProduct }: CounterProps) =
 
   return (
     <>
-      <section className="flex justify-around w-full items-center gap-2 p-2">
+      <section className="flex justify-around w-32 items-center gap-2 p-1 mb-1 bg-slate-200 rounded-full">
         <button
           type="button"
-          className="flex justify-center bg-red-600 w-1/2 p-2"
+          className="flex justify-center w-1/2 p-2"
           onClick={removeProductQuantity}
           disabled={cartProduct.quantity === 1 ? true : false}
         >  
-          <FaRegTrashAlt size={20} color="white" />
+          <FaMinus size={18} color="gray" />
         </button>
         <span className="text-xl p-2">
           { cartProduct.quantity }
         </span>
         <button
           type="button"
-          className="flex justify-center bg-blue-600 w-1/2 p-2"
+          className="flex justify-center w-1/2 p-2"
           onClick={() => addProductQuantity()}
         >
-          <IoAddCircle size={20} color="white" />
+          <FaPlus size={18} color="gray" />
         </button>
       </section>
     </>
