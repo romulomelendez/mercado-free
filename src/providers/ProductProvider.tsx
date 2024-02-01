@@ -24,7 +24,7 @@ export const ProductProvider = ({ children }: ProductProviderProps) => {
 
     const addToLocalStorage = (key: string, value: string): void => localStorage.setItem(key, value)
 
-    const removeFromLocalStorage = (key: string): void => localStorage.removeItem(key)
+    const clearLocalStorage = (): void => localStorage.clear()
 
     return (
         <ProductContext.Provider value={{
@@ -35,7 +35,7 @@ export const ProductProvider = ({ children }: ProductProviderProps) => {
             totalPrice,
             setTotalPrice,
             addToLocalStorage,
-            removeFromLocalStorage
+            clearLocalStorage
         }}>
             { children }
         </ProductContext.Provider>

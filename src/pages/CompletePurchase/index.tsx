@@ -17,6 +17,7 @@ export const CompletePurchase: React.FC = () => {
     if (cart.length === 0 && cartItems)
       return setCart(JSON.parse(cartItems))
     return addToLocalStorage("cart", JSON.stringify(cart))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cart])
 
   return (
