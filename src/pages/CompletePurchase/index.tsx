@@ -53,7 +53,7 @@ export const CompletePurchase: React.FC = () => {
         cart.length > 0 && (
           <div className="flex justify-between items-center w-full">
             <Total total={totalPrice} />
-            <Link to="/payment" className="bg-blue-600 hover:bg-blue-700 text-md p-2 text-white font-semibold rounded-full">
+            <Link to="/payment" className="bg-blue-600 hover:bg-blue-700 text-sm p-2 text-white font-semibold rounded-full">
               PROCEED TO PAYMENT
             </Link>
           </div>
