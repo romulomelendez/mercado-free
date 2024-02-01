@@ -6,7 +6,7 @@ import { GiShoppingBag } from "react-icons/gi"
 
 import { useProduct } from "../../hooks"
 
-import { Card, Counter, Total } from "../../components"
+import { Summary } from "../../components"
 
 export const CompletePurchase: React.FC = () => {
 
@@ -18,10 +18,10 @@ export const CompletePurchase: React.FC = () => {
       return setCart(JSON.parse(cartItems))
     return addToLocalStorage("cart", JSON.stringify(cart))
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cart])
+  }, [])
 
   return (
-    <div className="flex flex-col justify-start items-center w-screen h-full p-2 gap-2 bg-main-gray overflow-scroll">
+    <div className="flex flex-col justify-between items-center w-screen h-full p-2 gap-2 bg-main-gray overflow-scroll">
       {
         cart.length !== 0 ?
           cart.map(cartItem => (
@@ -29,13 +29,11 @@ export const CompletePurchase: React.FC = () => {
               className="flex flex-col justify-center items-center w-full bg-white rounded-sm"
               key={cartItem.product.id}
             >
-              <Card product={cartItem.product} />
-              <Counter cartProduct={cartItem}
-              />
+              <Summary data={cartItem} />
             </div>
           ))
         :
-          <div className="flex flex-col items-center mt-3 p-2 gap-4 w-full">
+          <div className="flex flex-col items-center mt-3 p-2 gap-4 w-max">
             <GiShoppingBag size={150} color="#cecece" />
             <span className="text-black text-xl">
               Build your shopping cart
@@ -53,7 +51,9 @@ export const CompletePurchase: React.FC = () => {
       {
         cart.length > 0 && (
           <div className="flex justify-between items-center w-full">
-            <Total total={totalPrice} />
+            <span>
+              TOTAL: {totalPrice}
+            </span>
             <Link to="/payment" className="bg-blue-600 hover:bg-blue-700 text-sm p-2 text-white font-semibold rounded-full">
               PROCEED TO PAYMENT
             </Link>

@@ -3,7 +3,7 @@ import { CiMenuBurger } from "react-icons/ci"
 import { LuMapPin } from "react-icons/lu"
 import { MdKeyboardArrowRight } from "react-icons/md"
 
-import { Logo, SearchContainer, Notification } from "../"
+import { Logo, SearchContainer, Notification } from ".."
 
 import { Link } from "react-router-dom"
 import { useProduct } from "../../hooks"

@@ -31,24 +31,24 @@ export const Counter: React.FC<CounterProps> = ({ cartProduct }: CounterProps) =
 
   return (
     <>
-      <section className="flex justify-around w-32 items-center gap-2 p-1 mb-1 bg-slate-200 rounded-full">
+      <section className="flex justify-around w-28 h-max items-center bg-slate-200 rounded-full">
         <button
           type="button"
-          className="flex justify-center w-1/2 p-2 hover:bg-gray-300 rounded-full h-full items-center"
+          className="flex justify-center p-2 hover:bg-gray-300 rounded-full h-full items-center"
           onClick={removeProductQuantity}
           disabled={cartProduct.quantity === 1 ? true : false}
         >  
-          <FaMinus size={18} color="gray" />
+          <FaMinus size={10} color="gray" />
         </button>
-        <span className="text-xl p-2">
+        <span className="text-md">
           { cartProduct.quantity }
         </span>
         <button
           type="button"
-          className="flex justify-center w-1/2 p-2 hover:bg-gray-300 rounded-full h-full items-center"
+          className="flex justify-center p-2 hover:bg-gray-300 rounded-full h-full items-center"
           onClick={() => addProductQuantity()}
         >
-          <FaPlus size={18} color="gray" />
+          <FaPlus size={10} color="gray" />
         </button>
       </section>
     </>
