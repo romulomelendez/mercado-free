@@ -42,6 +42,7 @@ export const Counter: React.FC<CounterProps> = ({ cartProduct }: CounterProps) =
           type="button"
           className="flex justify-center bg-red-600 w-1/2 p-2"
           onClick={removeProductQuantity}
+          disabled={cartProduct.quantity === 1 ? true : false}
         >  
           <FaRegTrashAlt size={20} color="white" />
         </button>
