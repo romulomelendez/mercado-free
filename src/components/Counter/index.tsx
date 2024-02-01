@@ -34,7 +34,7 @@ export const Counter: React.FC<CounterProps> = ({ cartProduct }: CounterProps) =
       <section className="flex justify-around w-32 items-center gap-2 p-1 mb-1 bg-slate-200 rounded-full">
         <button
           type="button"
-          className="flex justify-center w-1/2 p-2"
+          className="flex justify-center w-1/2 p-2 hover:bg-gray-300 rounded-full h-full items-center"
           onClick={removeProductQuantity}
           disabled={cartProduct.quantity === 1 ? true : false}
         >  
@@ -45,7 +45,7 @@ export const Counter: React.FC<CounterProps> = ({ cartProduct }: CounterProps) =
         </span>
         <button
           type="button"
-          className="flex justify-center w-1/2 p-2"
+          className="flex justify-center w-1/2 p-2 hover:bg-gray-300 rounded-full h-full items-center"
           onClick={() => addProductQuantity()}
         >
           <FaPlus size={18} color="gray" />

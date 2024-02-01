@@ -4,7 +4,7 @@ import {
     Routes
 } from "react-router-dom"
 
-import { Home, CompletePurchase } from "./pages"
+import { Home, CompletePurchase, Payment } from "./pages"
 import { Header } from "./components"
 
 import { ProductProvider } from "./providers"
@@ -17,6 +17,7 @@ export const App: React.FC = () => (
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/purchases" element={<CompletePurchase />} />
+            <Route path="/payment" element={<Payment />} />
         </Routes>
       </ProductProvider>
     </div>
