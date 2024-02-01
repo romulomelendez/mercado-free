@@ -19,15 +19,23 @@ export const ProductProvider = ({ children }: ProductProviderProps) => {
 
         const newCartArray = cart.filter(cartItem => +cartItem.product.id !== +id)
         setCart(newCartArray)
+        localStorage.removeItem("cart")
     }
+
+    const addToLocalStorage = (key: string, value: string): void => localStorage.setItem(key, value)
+
+    const removeFromLocalStorage = (key: string): void => localStorage.removeItem(key)
 
     return (
         <ProductContext.Provider value={{
             cart,
+            setCart,
             addToCart,
             removeFromCart,
             totalPrice,
-            setTotalPrice
+            setTotalPrice,
+            addToLocalStorage,
+            removeFromLocalStorage
         }}>
             { children }
         </ProductContext.Provider>

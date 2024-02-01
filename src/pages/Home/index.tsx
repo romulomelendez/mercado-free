@@ -12,16 +12,13 @@ export const Home: React.FC = () => {
   const [ products, setProducts ] = useState<ProductProps[]>([])
   const { addToCart } = useProduct()
   
-  const getProducts = async (): Promise<void> => {
-
-    const products = await (await fetch(import.meta.env.VITE_APP_BASE_API_URL + "/products")).json()
-    setProducts(products)
-  }
-
   useEffect(() => {
-    return () => {
-      getProducts()
+    const getProducts = async (): Promise<void> => {
+      const products = await (await fetch(import.meta.env.VITE_APP_BASE_API_URL + "/products")).json()
+      setProducts(products)
     }
+
+    getProducts()
   }, [])
   
   return (

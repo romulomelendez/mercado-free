@@ -1,3 +1,5 @@
+import { useEffect } from "react"
+
 import { Link } from "react-router-dom"
 
 import { GiShoppingBag } from "react-icons/gi"
@@ -8,7 +10,14 @@ import { Card, Counter, Total } from "../../components"
 
 export const CompletePurchase: React.FC = () => {
 
-  const { cart, totalPrice } = useProduct()
+  const { cart, setCart, addToLocalStorage, totalPrice } = useProduct()
+
+  useEffect(() => {
+    const cartItems = localStorage.getItem("cart") as string
+    if (cart.length === 0 && cartItems)
+      return setCart(JSON.parse(cartItems))
+    return addToLocalStorage("cart", JSON.stringify(cart))
+  }, [cart])
 
   return (
     <div className="flex flex-col justify-start items-center w-screen h-full p-2 gap-2 bg-main-gray overflow-scroll">
@@ -40,7 +49,9 @@ export const CompletePurchase: React.FC = () => {
             </Link>
           </div>
       }
-      <Total total={totalPrice} />
+      {
+        cart.length > 0 && <Total total={totalPrice} />
+      }
     </div>
   )
 }
