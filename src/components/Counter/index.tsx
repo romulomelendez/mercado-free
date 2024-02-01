@@ -17,21 +17,15 @@ export const Counter: React.FC<CounterProps> = ({ cartProduct }: CounterProps) =
     cartProduct.quantity++
     cartProduct.total = cartProduct.product.price * cartProduct.quantity
 
-    const auxArray: CartProps[] = cart
-    const productIndex = cart.findIndex(item => item.product.id === cartProduct.product.id)
-
-    auxArray[productIndex] = {
-      product: cartProduct.product,
-      quantity: cartProduct.quantity,
-      total: cartProduct.total
-    }
-    addToLocalStorage("cart", JSON.stringify(auxArray))
+    addToLocalStorage("cart", JSON.stringify(cart))
     setTotalPrice(totalPrice + cartProduct.total)
   }
 
   const removeProductQuantity = () => {
     cartProduct.quantity--
     cartProduct.total -= cartProduct.product.price
+    
+    addToLocalStorage("cart", JSON.stringify(cart))
     setTotalPrice(cartProduct.total)
   }
 
