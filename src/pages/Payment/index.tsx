@@ -15,7 +15,9 @@ export const Payment: React.FC = () => {
 
   return (
     <div className="flex flex-col justify-evenly items-center h-full bg-main-gray">
-      <h1 className="text-xl">PAYMENT MADE SUCCESSFULLY 🥳</h1>
+      <h1 className="text-xl">
+        PAYMENT MADE SUCCESSFULLY 🥳
+      </h1>
       <Link
         to="/"
         className="bg-blue-600 hover:bg-blue-700 text-sm p-2 text-white font-semibold rounded-full"

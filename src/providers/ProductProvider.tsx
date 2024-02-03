@@ -9,11 +9,14 @@ export const ProductProvider = ({ children }: ProductProviderProps) => {
     const [cart, setCart] = useState<CartProps[]>([])
     const [totalPrice, setTotalPrice] = useState<number>(0)
 
-    const addToCart = (product: ProductProps): void => setCart(allOtherProducts => [...allOtherProducts, {
-        product: product,
-        quantity: 1,
-        total: +product.price
-    }])
+    const addToCart = (product: ProductProps): void => {
+        setCart(allOtherProducts => [...allOtherProducts, {
+            product: product,
+            quantity: 1,
+            total: +product.price
+        }])
+        setTotalPrice(previousTotal => previousTotal + product.price)
+    }
 
     const removeFromCart = ({ id }: ProductProps): void => {
 
