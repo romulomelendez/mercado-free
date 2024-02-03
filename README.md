@@ -21,6 +21,14 @@ Mercado Free it's a simple e-commerce app made with React.js 18 version
 ### or run with docker
 <code>docker compose up</code>
 
+<hr />
+
+## Endpoints
+
+#### /app - Home Page
+#### /app/purchases - Shopping Cart Page
+#### /app/payment - Payment Page
+
 ## Some Screenshots
 ### Header
 ![Header Screenshot](./public/screenshots/header-screenshot.png)
