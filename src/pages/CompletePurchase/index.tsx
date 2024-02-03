@@ -9,12 +9,20 @@ import { useProduct } from "../../hooks"
 import { Summary } from "../../components"
 
 export const CompletePurchase: React.FC = () => {
-  const { cart, setCart, addToLocalStorage, totalPrice } = useProduct()
+  const { cart, setCart, addToLocalStorage, totalPrice, setTotalPrice } = useProduct()
 
   useEffect(() => {
-    const cartItems = localStorage.getItem("cart") as string
-    if (cart.length === 0 && cartItems) return setCart(JSON.parse(cartItems))
-    return addToLocalStorage("cart", JSON.stringify(cart))
+    const cartItems = JSON.parse(localStorage.getItem("cart") as string)
+    const totalPrice = Number(localStorage.getItem("totalPrice"))
+
+    if (cart.length === 0 && cartItems) {
+      setCart(cartItems)
+      setTotalPrice(totalPrice)
+      return
+    }
+    addToLocalStorage("cart", JSON.stringify(cart))
+    addToLocalStorage("totalPrice", JSON.stringify(totalPrice))
+    return
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

@@ -15,7 +15,10 @@ export const ProductProvider = ({ children }: ProductProviderProps) => {
             quantity: 1,
             total: +product.price
         }])
-        setTotalPrice(previousTotal => previousTotal + product.price)
+        const auxTotal = totalPrice + product.price
+        setTotalPrice(auxTotal)
+
+        addToLocalStorage("totalPrice", JSON.stringify(auxTotal))
     }
 
     const removeFromCart = ({ id }: ProductProps): void => {
