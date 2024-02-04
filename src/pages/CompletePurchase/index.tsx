@@ -6,7 +6,7 @@ import { GiShoppingBag } from "react-icons/gi"
 
 import { useProduct } from "../../hooks"
 
-import { Summary } from "../../components"
+import { Purchase } from "../../components"
 
 export const CompletePurchase: React.FC = () => {
   const { cart, setCart, addToLocalStorage, totalPrice, setTotalPrice } = useProduct()
@@ -35,7 +35,7 @@ export const CompletePurchase: React.FC = () => {
               className="flex flex-col items-center bg-white w-full md:w-[900px] rounded-sm"
               key={cartItem.product.id}
             >
-              <Summary data={cartItem} />
+              <Purchase data={cartItem} />
             </div>
           ))}
         </div>
