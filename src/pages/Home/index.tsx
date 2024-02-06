@@ -17,10 +17,10 @@ export const Home: React.FC = () => {
       const products = await (await fetch(import.meta.env.VITE_APP_BASE_API_URL + "/products")).json()
       setProducts(products)
     }
-
+    
     getProducts()
   }, [])
-  
+
   return (
     <div className="bg-light-gray grid grid-cols-2 h-full w-full overflow-scroll place-items-center max-xm:grid-cols-1 sm:grid-cols-3 md:grid-cols-4 p-5 gap-5 md:gap-x-16 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 cursor-pointer">
       <Suspense fallback={<p>Loading Products...</p>}>

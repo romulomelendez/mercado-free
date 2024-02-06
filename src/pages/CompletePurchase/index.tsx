@@ -35,7 +35,7 @@ export const CompletePurchase: React.FC = () => {
               className="flex flex-col items-center bg-white w-full md:w-[900px] rounded-sm"
               key={cartItem.product.id}
             >
-              <Purchase data={cartItem} />
+              <Purchase productData={cartItem} />
             </div>
           ))}
         </div>

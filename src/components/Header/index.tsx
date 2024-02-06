@@ -11,7 +11,7 @@ import { useProduct } from "../../hooks"
 export const Header = () => {
 
     const { cart } = useProduct()
-    
+
     return (
         <div className="flex flex-col w-full bg-light-yellow">
             <section className="flex justify-center items-center p-2 gap-2">
@@ -30,7 +30,9 @@ export const Header = () => {
             <section className="flex w-full justify-between items-center p-2 gap-3">
                 <div className="flex gap-2 w-full">
                     <LuMapPin size={15} className="text-dark-yellow" />
-                    <span className="text-dark-yellow text-xs">Send to P. Sherman, 42 Wallaby Way, Sydney</span>
+                    <span className="text-dark-yellow text-xs">
+                        Send to P. Sherman, 42 Wallaby Way, Sydney
+                    </span>
                 </div>
                 <MdKeyboardArrowRight size={15} className="text-dark-yellow" />
             </section>

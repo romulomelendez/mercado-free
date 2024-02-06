@@ -10,7 +10,9 @@ type ProductContextProps = {
   removeFromCart: (product: ProductProps) => void,
   setTotalPrice: (productPrice: number) => void,
   addToLocalStorage: (key: string, value: string) => void,
-  clearLocalStorage: () => void
+  clearLocalStorage: () => void,
+  cartLength: number,
+  setCartLength: (length: number) => void,
 }
 
 const initialValues = {
@@ -21,7 +23,9 @@ const initialValues = {
   removeFromCart: () => {},
   setTotalPrice: () => {},
   addToLocalStorage: () => {},
-  clearLocalStorage: () => {}
+  clearLocalStorage: () => {},
+  cartLength: 0,
+  setCartLength: () => {}
 }
 
 export const ProductContext = createContext<ProductContextProps>(initialValues)
