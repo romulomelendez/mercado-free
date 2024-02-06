@@ -9,7 +9,8 @@ import { useProduct } from "../../hooks"
 import { Purchase } from "../../components"
 
 export const CompletePurchase: React.FC = () => {
-  const { cart, setCart, addToLocalStorage, totalPrice, setTotalPrice } = useProduct()
+  const { cart, setCart, addToLocalStorage, totalPrice, setTotalPrice } =
+    useProduct()
 
   useEffect(() => {
     const cartItems = JSON.parse(localStorage.getItem("cart") as string)
@@ -27,9 +28,9 @@ export const CompletePurchase: React.FC = () => {
   }, [])
 
   return (
-    <div className="flex flex-col justify-between items-center w-screen h-full p-2 gap-2 bg-main-gray overflow-scroll">
+    <div className="flex flex-col items-center w-screen h-screen p-2 gap-2 bg-main-gray">
       {cart.length !== 0 ? (
-        <div className="flex flex-col justify-start items-center gap-2 center h-full w-full">
+        <div className="flex flex-col justify-start items-center gap-2 center h-[720px] w-full overflow-scroll">
           {cart.map((cartItem) => (
             <div
               className="flex flex-col items-center bg-white w-full md:w-[900px] rounded-sm"
