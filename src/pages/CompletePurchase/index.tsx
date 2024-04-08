@@ -1,5 +1,3 @@
-import { useEffect } from "react"
-
 import { Link } from "react-router-dom"
 
 import { GiShoppingBag } from "react-icons/gi"
@@ -9,23 +7,8 @@ import { useProduct } from "../../hooks"
 import { Purchase } from "../../components"
 
 export const CompletePurchase: React.FC = () => {
-  const { cart, setCart, addToLocalStorage, totalPrice, setTotalPrice } =
-    useProduct()
 
-  useEffect(() => {
-    const cartItems = JSON.parse(localStorage.getItem("cart") as string)
-    const totalPrice = Number(localStorage.getItem("totalPrice"))
-
-    if (cart.length === 0 && cartItems) {
-      setCart(cartItems)
-      setTotalPrice(totalPrice)
-      return
-    }
-    addToLocalStorage("cart", JSON.stringify(cart))
-    addToLocalStorage("totalPrice", JSON.stringify(totalPrice))
-    return
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  const { cart, finalTotal } = useProduct()
 
   return (
     <div className="flex flex-col items-center w-screen h-screen p-2 gap-2 bg-main-gray">
@@ -54,10 +37,11 @@ export const CompletePurchase: React.FC = () => {
           </Link>
         </div>
       )}
+
       {cart.length > 0 && (
         <div className="flex justify-between items-center h-max w-full bg-white shadow-sm p-5">
           <span className="text-lg text-black font-bold">
-            TOTAL: R$ {totalPrice}
+            TOTAL: R$ { finalTotal }
           </span>
           <Link
             to="/payment"

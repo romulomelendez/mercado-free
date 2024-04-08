@@ -11,6 +11,7 @@ type PurchaseProps = {
 }
 
 export const Purchase: React.FC<PurchaseProps> = ({ productData }: PurchaseProps) => (
+  
   <div className="flex justify-evenly md:w-[900px] h-max p-5 gap-3">
     <img src={productData.product.img} alt="product image" height={50} width={180} />
     <section className="flex flex-col justify-between items-center">
@@ -24,4 +25,4 @@ export const Purchase: React.FC<PurchaseProps> = ({ productData }: PurchaseProps
       <Total total={productData.total} />
     </section>
   </div>
-)
+) 

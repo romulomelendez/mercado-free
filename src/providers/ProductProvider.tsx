@@ -8,7 +8,8 @@ export const ProductProvider = ({ children }: ProductProviderProps) => {
 
     const [cart, setCart] = useState<CartProps[]>([])
     const [cartLength, setCartLength] = useState<number>(0)
-    const [totalPrice, setTotalPrice] = useState<number>(0)
+    const [itemQuantity, setItemQuantity] = useState<number>(1)
+    const [finalTotal, setFinalTotal] = useState<number>(0)
 
     const addToCart = (product: ProductProps): void => {
         setCart(allOtherProducts => [...allOtherProducts, {
@@ -16,12 +17,11 @@ export const ProductProvider = ({ children }: ProductProviderProps) => {
             quantity: 1,
             total: +product.price
         }])
-        const auxTotal = totalPrice + product.price
-        setTotalPrice(auxTotal)
         setCartLength(cartLength + 1)
+        setFinalTotal(finalTotal + product.price)
 
-        addToLocalStorage("totalPrice", JSON.stringify(auxTotal))
         addToLocalStorage("cartLength", JSON.stringify(cartLength))
+        addToLocalStorage("finalTotal", JSON.stringify(finalTotal))
     }
 
     const removeFromCart = ({ id }: ProductProps): void => {
@@ -44,12 +44,14 @@ export const ProductProvider = ({ children }: ProductProviderProps) => {
             setCart,
             addToCart,
             removeFromCart,
-            totalPrice,
-            setTotalPrice,
             addToLocalStorage,
             clearLocalStorage,
             cartLength,
-            setCartLength
+            setCartLength,
+            itemQuantity,
+            setItemQuantity,
+            finalTotal,
+            setFinalTotal
         }}>
             { children }
         </ProductContext.Provider>

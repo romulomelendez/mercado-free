@@ -4,6 +4,7 @@ import { FaPlus } from "react-icons/fa6"
 import { CartProps } from "../../@types"
 
 import { useProduct } from "../../hooks"
+import { useState } from "react"
 
 type CounterProps = {
   cartProduct: CartProps
@@ -11,24 +12,29 @@ type CounterProps = {
 
 export const Counter: React.FC<CounterProps> = ({ cartProduct }: CounterProps) => {
 
-  const { cart, totalPrice, setTotalPrice, addToLocalStorage } = useProduct()
+  const { cart, addToLocalStorage, finalTotal, setFinalTotal} = useProduct()
+  const [itemQuantity, setItemquantity] = useState(1)
+
+  const handleFinalPrice = (total: number): void => setFinalTotal(total)
 
   const addProductQuantity = () => {
     cartProduct.quantity++
     cartProduct.total = cartProduct.product.price * cartProduct.quantity
+    setItemquantity(itemQuantity + 1)
+    handleFinalPrice(finalTotal + cartProduct.product.price)
 
-    setTotalPrice(totalPrice + cartProduct.total)
     addToLocalStorage("cart", JSON.stringify(cart))
-    addToLocalStorage("totalPrice", JSON.stringify(totalPrice))
+    addToLocalStorage("finalTotal", JSON.stringify(finalTotal))
   }
 
   const removeProductQuantity = () => {
     cartProduct.quantity--
     cartProduct.total -= cartProduct.product.price
-    
-    setTotalPrice(cartProduct.total)
+    setItemquantity(itemQuantity - 1)
+    handleFinalPrice(finalTotal - cartProduct.product.price)
+
     addToLocalStorage("cart", JSON.stringify(cart))
-    addToLocalStorage("totalPrice", JSON.stringify(totalPrice))
+    addToLocalStorage("finalTotal", JSON.stringify(finalTotal))
   }
 
   return (
@@ -43,12 +49,12 @@ export const Counter: React.FC<CounterProps> = ({ cartProduct }: CounterProps) =
           <FaMinus size={10} color="gray" />
         </button>
         <span className="text-md">
-          { cartProduct.quantity }
+          { itemQuantity }
         </span>
         <button
           type="button"
           className="flex justify-center p-2 hover:bg-gray-300 rounded-full h-full items-center"
-          onClick={() => addProductQuantity()}
+          onClick={addProductQuantity}
         >
           <FaPlus size={10} color="gray" />
         </button>
